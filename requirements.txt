@@ -1,4 +1,3 @@
-mkl-service==2.3.0
 mkl-fft
 mkl-random
 brotlipy==0.7.0
