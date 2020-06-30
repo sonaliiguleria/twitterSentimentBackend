@@ -1,6 +1,6 @@
-mkl_service
-mkl_fft
-mkl_random
+mkl-service==2.3.0
+mkl-fft
+mkl-random
 brotlipy==0.7.0
 certifi==2020.6.20
 cffi==1.14.0
