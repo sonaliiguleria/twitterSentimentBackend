@@ -25,7 +25,8 @@ app.secret_key = 'super secret key'
 
 
 #Classifiers
-classifier = joblib.load('svmClassifier2.pkl')
+classifier = joblib.load('svmClassifier.joblib')
+print("model is loaded-->")
 tweet_analyzer = TweetAnalyzer()
 
 @app.route("/")
