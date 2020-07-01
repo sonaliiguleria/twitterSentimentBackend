@@ -12,20 +12,23 @@ import glob
 from random import random
 import re
 import os
+from flask_ngrok import run_with_ngrok
 import numpy as np
 import sklearn
-import joblib
+from joblib import load as ld
 import requests
 import time
-from sentiment import TweetAnalyzer
-
 
 app = flask.Flask(__name__ )
 app.secret_key = 'super secret key'
 
 
+run_with_ngrok(app) 
+
 #Classifiers
-classifier = joblib.load('svmClassifier.pkl')
+print('loading model...')
+classifier = joblib.load('svmClassifier.joblib')
+print('model loaded')
 tweet_analyzer = TweetAnalyzer()
 
 @app.route("/")
@@ -58,8 +61,4 @@ def test():
     return jsonify( clean_data )
 
 
-
-
-
-if __name__ == '__main__':
-    app.run()
+app.run()
