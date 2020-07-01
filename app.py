@@ -15,9 +15,10 @@ import os
 from flask_ngrok import run_with_ngrok
 import numpy as np
 import sklearn
-from joblib import load as ld
+import joblib
 import requests
 import time
+from sentiment import TweetAnalyzer
 
 app = flask.Flask(__name__ )
 app.secret_key = 'super secret key'
